@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 layout = """
-    <h1>Proyecto Web (LP3) | David Rosado</h1>
+    <h1>Proyecto Web (LP3) | Jairo Mendoza</h1>
     <hr/>
     <ul>
         <li>
@@ -24,23 +24,30 @@ layout = """
 
 
 def index(request):
-    estudiantes = ['Isabella Caballero',
-                   'Alejandro Hermitaño',
-                   'Joan Palomino',
-                   'Pierre Bernaola']
+    estudiantes = [
+        "Isabella Caballero",
+        "Alejandro Hermitaño",
+        "Joan Palomino",
+        "Pierre Bernaola",
+    ]
 
-    return render(request, 'index.html', {
-        'titulo': 'Inicio',
-        'mensaje': 'Proyecto Web con Django',
-        'estudiantes':estudiantes
-    })
+    return render(
+        request,
+        "index.html",
+        {
+            "titulo": "Inicio",
+            "mensaje": "Proyecto Web con Django",
+            "estudiantes": estudiantes,
+        },
+    )
 
 
 def saludo(request):
-    return render(request, 'saludo.html', {
-        'titulo': 'Saludo',
-        'autor_saludo': 'David Rosado Valerio'
-    })
+    return render(
+        request,
+        "saludo.html",
+        {"titulo": "Saludo", "autor_saludo": "Jairo Daniel Mendoza Torres"},
+    )
 
 
 def rango(request):
@@ -57,17 +64,16 @@ def rango(request):
         rango_numeros.append(a)
         a += 1
     resultado += "</ul>"
-    return render(request, 'rango.html', {
-        'titulo':'Rango',
-        'a':a,
-        'b':b,
-        'rango_numero':rango_numeros
-    })
+    return render(
+        request,
+        "rango.html",
+        {"titulo": "Rango", "a": a, "b": b, "rango_numero": rango_numeros},
+    )
 
 
 def rango2(request, a=0, b=100):
     if a > b:
-        return redirect('rango2', a=b, b=a)
+        return redirect("rango2", a=b, b=a)
     resultado = f"""
         <h2>Numeros de [{a}, {b}]</h2>
         Resultado: <br>

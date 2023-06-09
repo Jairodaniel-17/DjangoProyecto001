@@ -25,10 +25,10 @@ layout = """
 
 def index(request):
     estudiantes = [
-        "Isabella Caballero",
-        "Alejandro Hermitaño",
-        "Joan Palomino",
-        "Pierre Bernaola",
+        "Diana Edith",
+        "Armando Requejo",
+        "Shantall Palomino",
+        "Daniel Mendoza",
     ]
 
     return render(
